@@ -1,0 +1,51 @@
+{
+  "name": "lab1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "start": "node src/dist/bin/www.js",
+    "dev": "DEBUG=myapp:* ts-node-dev --respawn --transpile-only src/bin/www.ts"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "~4.21.1",
+    "express-jwt": "^8.4.1",
+    "express-session": "^1.18.1",
+    "jwks-rsa": "^3.1.0",
+    "morgan": "~1.9.1",
+    "passport": "^0.7.0",
+    "passport-auth0": "^1.4.4",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "qrcode": "^1.5.4",
+    "sequelize": "^6.37.4",
+    "uuid": "^10.0.0"
+  },
+  "main": "app.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.7",
+    "@types/debug": "^4.1.12",
+    "@types/express": "^5.0.0",
+    "@types/express-jwt": "^6.0.4",
+    "@types/express-session": "^1.18.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.7.5",
+    "@types/passport": "^1.0.16",
+    "@types/passport-auth0": "^1.0.9",
+    "@types/pg": "^8.11.10",
+    "@types/qrcode": "^1.5.5",
+    "@types/uuid": "^10.0.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  }
+}
