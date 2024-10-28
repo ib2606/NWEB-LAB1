@@ -4,8 +4,10 @@ import { generateQRCode } from '../utils/qrcode';
 import { authenticate } from '../middlewares/auth';
 import checkScopes from "../middlewares/checkScopes";
 import checkLoggedIn from "../middlewares/checkLoggedIn";
+import dotenv from "dotenv";
 
 const router = express.Router();
+dotenv.config();
 
 // POST /tickets/generate
 // @ts-ignore
@@ -27,7 +29,7 @@ router.post('/generate', authenticate, checkScopes(['create:ticket']),async (req
 
         const ticket = await Ticket.create({ vatin, firstName, lastName });
 
-        const ticketURL = `http://localhost:3000/tickets/${ticket.id}`;
+        const ticketURL = `${process.env.HOST_URL}/tickets/${ticket.id}`;
         const qrCodeImage = await generateQRCode(ticketURL);
 
         res.setHeader('Content-Type', 'image/png');
